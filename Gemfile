@@ -52,5 +52,8 @@ gem 'bcrypt'
 gem 'rexml'
 gem 'dotenv-rails'
 group :development do
-  gem 'letter_opener_web'
+gem 'letter_opener_web'
+gem 'net-smtp'
+gem 'net-imap'
+gem 'net-pop'
 end
