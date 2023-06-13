@@ -1,4 +1,4 @@
-100.times do |n|
+50.times do |n|
     name = Faker::Games::Pokemon.name
     email = Faker::Internet.email
     password = "password"

@@ -17,10 +17,29 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to user_path(@user), notice: "プロフィールを編集しました！"
+    else 
+      render :edit
+    end
+  end
+
+  def favorites
+    @user = User.find(params[:id])
+    @favorites = @user.favorite_pictures
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, 
+    params.require(:user).permit(:name, :email, :user_image, :password, 
                                                 :password_confirmation)
-  end                                           
+  end
+  
 end
