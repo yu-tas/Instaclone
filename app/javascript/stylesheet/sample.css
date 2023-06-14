@@ -1,0 +1,10 @@
+.btn {
+    background-color: pink;
+    color: white;
+ }
+
+ .main-container {
+    background-image: image-url("app/assets/images/aozora.jpg");
+    height: 800px;
+    background-size: cover;
+  }
