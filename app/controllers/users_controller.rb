@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :login_required, only: [:new, :create]
+  before_action :require_ownership, only: [:edit, :update]
   def new
     @user = User.new
   end
@@ -42,4 +43,19 @@ class UsersController < ApplicationController
                                                 :password_confirmation)
   end
   
+  def login_required
+    unless logged_in?
+      flash[:error] = "ログインしてください"
+      redirect_to users_path
+    end
+  end
+
+  def require_ownership
+    user = User.find(params[:id])
+    unless user == current_user
+      flash[:error] = "他のユーザーのプロフィールは編集できません"
+      redirect_to user_path
+    end
+  end
+
 end
