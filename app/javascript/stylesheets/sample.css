@@ -4,7 +4,7 @@
  }
 
  .main-container {
-    background-image: image-url("app/assets/images/aozora.jpg");
+    /* background-image: image-url('aozora.jpg'); */
     height: 800px;
     background-size: cover;
   }
