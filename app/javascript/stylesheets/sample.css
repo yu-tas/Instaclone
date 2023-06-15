@@ -1,10 +1,12 @@
-.btn {
-    background-color: pink;
-    color: white;
- }
+header{
+   background-color: blueviolet;
+}
 
- .main-container {
-    /* background-image: image-url('aozora.jpg'); */
-    height: 800px;
-    background-size: cover;
-  }
+footer{
+   background-color: blueviolet;
+
+}
+
+.btn{
+   color: black;
+}
